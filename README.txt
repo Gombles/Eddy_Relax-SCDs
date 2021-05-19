@@ -1,6 +1,7 @@
 open er_main
 
-highlight lines 65-67 + press ctrl + /
+if commented out 
+  highlight lines 65-67 + press ctrl + /
 
 press ctrl + enter
 
