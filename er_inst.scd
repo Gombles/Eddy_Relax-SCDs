@@ -137,7 +137,7 @@
 
 		//CHORDS1 + ARP PARAMETERS
 		Pdefn(\root, (~noteOffset-60));
-		Pdefn(\c2_amp, 1.2);
+		Pdefn(\c2_amp, 0.6);
 
 		//CHORDS1 PATTERN
 		Pdef(

@@ -62,9 +62,9 @@ s.waitForBoot({
 	~osc_reply.sendMsg('/1/server_start', "Server Loaded!");
 	"Loaded!".postln;
 
-	t = Routine { loop {
+/*	t = Routine { loop {
 		for (0, 23, {arg i; ~timeline[i].value; ~day_length/24.wait })
-	} }.play;
+	} }.play;*/
 
 });
 )

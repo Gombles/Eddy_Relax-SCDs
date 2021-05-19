@@ -134,7 +134,7 @@
 
 			~chords1.play;
 			//chord parameters
-			Pdefn(\c_amp_scale, 0.12);
+			Pdefn(\c_amp_scale, 0.07);
 
 		},
 		{\eleven.postln;
@@ -155,17 +155,17 @@
 		},
 		{\thirteen.postln;
 			~mrimba1.play;
+			~chords1.stop;
 		},
 		{\fourteen.postln;
 			~mrimba1.play;
-			~chords1.stop;
 			//mrimba parameters
 			~noteOffset = 34;
 			Pdefn(\root, ~noteOffset - 60);
 			~m2n.value(~noteOffset).postln;
 			Pdefn(\m_notes, Prand((~scales[~s_index]+~noteOffset).midicps, inf) * Pdefn(\octs));
 			Pdefn(\m_time, 3);
-			Pdefn(\m_amp_scale, 0.65);
+			Pdefn(\m_amp_scale, 0.35);
 			Pdefn(\rqmin, 0.02);
 			Pdefn(\rqmax, 0.05);
 		},
@@ -176,7 +176,7 @@
 			~m2n.value(~noteOffset).postln;
 			Pdefn(\m_notes, Prand((~scales[~s_index]+~noteOffset).midicps, inf) * Pdefn(\octs));
 			Pdefn(\m_time, 2);
-			Pdefn(\m_amp_scale, 0.4);
+			Pdefn(\m_amp_scale, 0.25);
 			Pdefn(\rqmin, 0.04);
 			Pdefn(\rqmax, 0.07);
 
@@ -200,7 +200,7 @@
 			~m2n.value(~noteOffset).postln;
 			Pdefn(\m_notes, Prand((~scales[~s_index]+~noteOffset).midicps, inf) * Pdefn(\octs));
 			Pdefn(\m_time, 1);
-			Pdefn(\m_amp_scale, 0.10);
+			Pdefn(\m_amp_scale, 0.08);
 			Pdefn(\rqmin, 0.06);
 			Pdefn(\rqmax, 0.1);
 		},
@@ -210,7 +210,7 @@
 			Pdefn(\root, ~noteOffset - 60);
 			~m2n.value(~noteOffset).postln;
 			Pdefn(\m_time, 4);
-			Pdefn(\m_amp_scale, 0.6);
+			Pdefn(\m_amp_scale, 0.3);
 			Pdefn(\rqmin, 0.02);
 			Pdefn(\rqmax, 0.05);
 			~chords2.play;
@@ -221,6 +221,7 @@
 			~noteOffset = 34;
 			Pdefn(\root, ~noteOffset - 60);
 			~m2n.value(~noteOffset).postln;
+			Pdefn(\c2_amp, 1.5);
 
 		},
 		{\twenty.postln;
@@ -230,6 +231,7 @@
 			Pdefn(\root, ~noteOffset - 60);
 			~m2n.value(~noteOffset).postln;
 			Pdefn(\carp_dur, 2);
+			Pdefn(\c2_amp, 1);
 
 		},
 		{\twentyone.postln;
@@ -239,7 +241,7 @@
 			Pdefn(\root, ~noteOffset - 60);
 			~m2n.value(~noteOffset).postln;
 			Pdefn(\carp_dur, 2);
-			Pdefn(\c2_amp, 1);
+			Pdefn(\c2_amp, 0.8);
 
 		},
 		{\twentytwo.postln;
@@ -251,11 +253,11 @@
 			r = Routine {
 				Pdefn(\carp_dur, 4);
 				(~day_length/48).wait;
-				Pdefn(\caer_dur, 2);
+				Pdefn(\carp_dur, 2);
 				(~day_length/96).wait;
-				Pdefn(\caer_dur, 2);
+				Pdefn(\carp_dur, 1);
 			}.play;
-			Pdefn(\c2_amp, 1.5);
+			Pdefn(\c2_amp, 1.2);
 		},
 		{\twentythree.postln;
 			~chords2.stop;
