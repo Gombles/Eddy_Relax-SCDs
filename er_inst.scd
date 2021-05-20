@@ -1,6 +1,7 @@
 ~instruments =  {
 
 	~outputs = {
+
 		SynthDef(\mainOut, {
 			arg in = ~out, out = 0;
 			var sig;
@@ -213,8 +214,8 @@
 		~chords1 = Pdef(\chords1);
 		~chords2 = Pdef(\chords2);
 		~carps = Pdef(\carps);
-		~shaker = Synth(\shaker, target: ~shakers);
 		o = Synth(\mainOut, [\in, ~out], ~outs);
+		~shaker = Synth(\shaker, target: ~shakers);
 	};
 
 };

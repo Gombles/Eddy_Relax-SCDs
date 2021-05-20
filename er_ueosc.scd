@@ -9,7 +9,8 @@
 				s.sync;
 				1.wait;
 				"Game started!!!".postln;
-				if(~shaker == nil){~shaker = Synth(\shaker, target: ~shakers);};
+				o = Synth(\mainOut, [\in, ~out], ~outs);
+				~shaker = Synth(\shaker, target: ~shakers);
 			}.play;
 		},
 		'/1/startup', recvPort: ~recv_port
@@ -127,12 +128,12 @@
 			if(
 				msg[1] == 1,
 				{
-					~mrimba1 = Pdef(\mrimba).play;
+					~mrimba1.play;
 					"Mrimbas playing!".postln;
 					~osc_reply.sendMsg('/1/mrimbas_playing', 1);
 				},
 				{
-					~mrimba1 = Pdef(\mrimba).stop.fadeTime(3);
+					~mrimba1.stop.fadeTime(3);
 					"Mrimbas stopped!".postln;
 					~osc_reply.sendMsg('/1/mrimbas_playing', 0);
 				}
@@ -147,18 +148,58 @@
 			if(
 				msg[1] == 1,
 				{
-					~chords1 = Pdef(\chords).play;
+					~chords1.play;
 					"Chords playing!".postln;
 					~osc_reply.sendMsg('/1/chords_playing', 1);
 				},
 				{
-					~chords1 = Pdef(\chords).stop.fadeTime(3);
+					~chords1.stop.fadeTime(3);
 					"Chords stopped!".postln;
 					~osc_reply.sendMsg('/1/chords_playing', 0);
 				}
 			);
 		},
 		'/1/chords', recvPort: ~recv_port
+	);
+
+	OSCdef(
+		\chords2,
+		{arg msg;
+			if(
+				msg[1] == 1,
+				{
+					~chords2.play;
+					"Chords2 playing!".postln;
+					~osc_reply.sendMsg('/1/chords2_playing', 1);
+				},
+				{
+					~chords2.stop.fadeTime(3);
+					"Chords stopped!".postln;
+					~osc_reply.sendMsg('/1/chords2_playing', 0);
+				}
+			);
+		},
+		'/1/chords2', recvPort: ~recv_port
+	);
+
+	OSCdef(
+		\carps,
+		{arg msg;
+			if(
+				msg[1] == 1,
+				{
+					~carps.play;
+					"Carps playing!".postln;
+					~osc_reply.sendMsg('/1/chords2_playing', 1);
+				},
+				{
+					~carps.stop.fadeTime(3);
+					"Carps stopped!".postln;
+					~osc_reply.sendMsg('/1/chords2_playing', 0);
+				}
+			);
+		},
+		'/1/carps', recvPort: ~recv_port
 	);
 
 	OSCdef(
@@ -207,6 +248,7 @@
 				{
 					~s_index = (0..4).choose;
 					Pdefn(\m_notes, Prand((~scales[~s_index]+~noteOffset).midicps, inf) * Prand([0.5, 1, 2, 4], inf));
+					~s_names[~s_index].postln;
 					~osc_reply.sendMsg('/1/new_scale', ~s_names[~s_index]);
 				},
 

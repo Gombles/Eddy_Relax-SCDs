@@ -165,7 +165,7 @@
 			~m2n.value(~noteOffset).postln;
 			Pdefn(\m_notes, Prand((~scales[~s_index]+~noteOffset).midicps, inf) * Pdefn(\octs));
 			Pdefn(\m_time, 3);
-			Pdefn(\m_amp_scale, 0.35);
+			Pdefn(\m_amp_scale, 0.2);
 			Pdefn(\rqmin, 0.02);
 			Pdefn(\rqmax, 0.05);
 		},
@@ -176,7 +176,7 @@
 			~m2n.value(~noteOffset).postln;
 			Pdefn(\m_notes, Prand((~scales[~s_index]+~noteOffset).midicps, inf) * Pdefn(\octs));
 			Pdefn(\m_time, 2);
-			Pdefn(\m_amp_scale, 0.25);
+			Pdefn(\m_amp_scale, 0.125);
 			Pdefn(\rqmin, 0.04);
 			Pdefn(\rqmax, 0.07);
 
@@ -188,7 +188,7 @@
 			~m2n.value(~noteOffset).postln;
 			Pdefn(\m_notes, Prand((~scales[~s_index]+~noteOffset).midicps, inf) * Pdefn(\octs));
 			Pdefn(\m_time, 2);
-			Pdefn(\m_amp_scale, 0.15);
+			Pdefn(\m_amp_scale, 0.8);
 			Pdefn(\rqmin, 0.06);
 			Pdefn(\rqmax, 0.09);
 
@@ -200,7 +200,7 @@
 			~m2n.value(~noteOffset).postln;
 			Pdefn(\m_notes, Prand((~scales[~s_index]+~noteOffset).midicps, inf) * Pdefn(\octs));
 			Pdefn(\m_time, 1);
-			Pdefn(\m_amp_scale, 0.08);
+			Pdefn(\m_amp_scale, 0.06);
 			Pdefn(\rqmin, 0.06);
 			Pdefn(\rqmax, 0.1);
 		},
@@ -210,7 +210,7 @@
 			Pdefn(\root, ~noteOffset - 60);
 			~m2n.value(~noteOffset).postln;
 			Pdefn(\m_time, 4);
-			Pdefn(\m_amp_scale, 0.3);
+			Pdefn(\m_amp_scale, 0.15);
 			Pdefn(\rqmin, 0.02);
 			Pdefn(\rqmax, 0.05);
 			~chords2.play;
